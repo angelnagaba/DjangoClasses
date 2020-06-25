@@ -2,7 +2,17 @@
 {% load static %}
 
 {% block content %}
-<img src="{% static 'images/angel.jpg' %}"/>
+<div class="row">
+    <div class="col-md-6">
+       <p class="mt-1"> <img src="{% static 'images/angel.jpg'  %}" height=500 width="100%"/></p>
+    </div>
+    <div class="col-md-6">
+        <h1>About me</h1>
+        <p>
+            I work in marketing and advertising. When I see ads that were informed by my "puzzle cracking" I randomly smile in the middle of the street in miserable London. Also, the insight finding doesnt end. Clients and my company give me more to find! Its cool and difficult that I can learn more and find new tools to help my skillset. I also got to learn more about my own field Psychology and other cool fields like econometrics, maths, computer science, even business planning.Sorry if this seem colloquial or unprofessional.Its an awesome feeling finding insight or even when you build an automated pipeline into a timed machine learning model haha. Its like puzzle cracking using cheats (but of course I had to create it).
+        </p>
+    </div>
+</div>
     {% for post in posts %}
             
            
