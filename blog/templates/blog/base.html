@@ -7,11 +7,23 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{% static 'css/blog.css' %}"> 
-       
+       <style>
+       .footer{
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #C25100;
+        color: white;
+        text-align: center;
+
+       }
+       </style>
        
     </head>
     <body>
         <div class="page-header">
+            <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
             <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
             <h1><a href="/">Django Girls Blog</a></h1>
         </div>
@@ -23,6 +35,10 @@
                 </div>
             </div>
         </div>
-        <div class="page-footer"></div>
+        <div class="footer">
+            <!--<a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
+            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>-->
+            <h1><a href="/">Django Girls Blog</a></h1>
+        </div>
     </body>>
 </html>
