@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect
-from .models import Post, Comment
+from .models import Post, Comment,Message
 from django.utils import timezone
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.views.generic import View
-from .forms import PostForm,CommentForm
+from .forms import PostForm,CommentForm,RegisterForm
 from django.contrib.auth.decorators import login_required
 
 
@@ -94,6 +94,19 @@ def comment_remove(request, pk):
     comment.delete()
     return redirect('post_detail', pk=comment.post.pk)
 #def LoginView():
+def add_message_to_post(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    if request.method == "POST":
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = post
+            comment.save()
+            return redirect('post_detail', pk=post.pk)
+    else:
+        form = RegisterForm()
+    return render(request, 'blog/add_comment_to_post.html', {'form': form})
+
 
 
 #class-based views
